@@ -1,5 +1,7 @@
 # Vite Bug reproduction
 
+Vite issue: https://github.com/vitejs/vite/issues/21422
+
 This repository reproduces a Bug with a WebWorker import in a library that uses realtive base paths. This only happens in dev mode and only when the dependencies are getting optimized into `node_modules/.vite/deps`.
 
 This repository contains to projects:
