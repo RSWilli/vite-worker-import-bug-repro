@@ -14,7 +14,10 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/my-library.es.js"
+      "import": "./dist/main.js"
+    },
+    "./alwaysbroken": {
+      "import": "./dist/main/alwaysbroken.js"
     }
   }
 }

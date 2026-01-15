@@ -6,10 +6,17 @@ export default defineConfig({
     build: {
         minify: false,
         lib: {
-            entry: 'src/index.js',
+            entry: {
+                "main": "src/index.js",
+                "main/alwaysbroken": "src/alwaysbroken/index.js"
+            },
             name: 'MyLibrary',
-            fileName: (format) => `my-library.${format}.js`,
             formats: ['es']
+        },
+        rollupOptions: {
+            output: {
+                entryFileNames: "[name].js",
+            }
         }
     }
 })

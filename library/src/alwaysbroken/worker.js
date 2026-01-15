@@ -1,0 +1,1 @@
+self.postMessage('Hello from alwaysbroken worker!')

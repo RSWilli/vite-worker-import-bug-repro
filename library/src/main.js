@@ -1,10 +1,14 @@
 // main.ts only for development testing
 
-import { workingWorker, brokenWorker } from './index'
+import * as lib from './index'
+import * as alwaysbroken from './alwaysbroken/index'
 
 /**
- * Both of these functions work when developing inside the library.
+ * All of these functions work when developing inside the library.
  */
 
-workingWorker()
-brokenWorker()
+lib.urlImportWorker()
+lib.importWorker()
+
+alwaysbroken.urlImportWorker()
+alwaysbroken.importWorker()

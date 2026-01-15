@@ -1,4 +1,8 @@
-import { workingWorker, brokenWorker } from './index'
+import * as lib from 'library'
+import * as alwaysbroken from 'library/alwaysbroken'
 
-workingWorker()
-brokenWorker()
+lib.urlImportWorker()
+lib.importWorker()
+
+alwaysbroken.urlImportWorker()
+alwaysbroken.importWorker()

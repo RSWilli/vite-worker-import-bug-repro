@@ -6,7 +6,7 @@ This repository reproduces a Bug with a WebWorker import in a library that uses 
 
 This repository contains to projects:
 
-* library: a simple vite library exposing a Hello World WebWorker
+* library: a simple vite library exposing multiple Hello World WebWorkers
 * application: the vite application that imports the library and calls the function exposed by the library
 
 ## Quick start:
@@ -42,23 +42,8 @@ The `/* @vite-ignore */` is wrong there, because the application that imports th
 Import the worker in the library via:
 
 ```js
-import HelloWorldWorker from "./worker?worker"
+import HelloWorldWorker from "./worker?worker&inline"
 ```
-
-Which gets transpiled to:
-
-```js
-function WorkerWrapper(options) {
-  return new Worker(
-    "" + new URL("assets/worker-DBPFjENN.js", import.meta.url).href,
-    {
-      name: options?.name
-    }
-  );
-}
-```
-
-(Note the lack of the `/* @vite-ignore */`)
 
 ## Additional Notes:
 
